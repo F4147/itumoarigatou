@@ -85,12 +85,18 @@
             }
         }
 
-        .result-wrapper {
-            background: rgba(255, 255, 255, 0.95);
+      .result-wrapper {
+            /* 背景の白味をさらに削り、透明度を上げました (0.05 → 0.02) */
+            background: rgba(255, 255, 255, 0.02); 
             padding: 50px 60px;
             border-radius: 25px;
-            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
+            border: none;
+            /* 内側の光（inset shadow）も少し弱めて透明感を強調 */
+            box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 
+                        inset 0 0 60px 0 rgba(255, 255, 255, 0.03);
+            /* ぼかし(blur)を 8px → 3px に下げて、背景の形が見えやすくしました */
+            backdrop-filter: blur(3px) brightness(1.1) contrast(1.05);
+            -webkit-backdrop-filter: blur(3px) brightness(1.1) contrast(1.05);
             position: relative;
             overflow: hidden;
             max-width: 600px;
@@ -278,7 +284,7 @@
          下の行のコメントを外して、ファイル名を変更してください
          例：<img src="不正解ページ背景.jpg" alt="" class="background-image">
          ======================================== -->
-    <!-- <img src="背景画像ファイル名.jpg" alt="" class="background-image"> -->
+    <img src="IMG_022689.jpeg" alt="" class="background-image">
 
     <div class="container">
         <div class="result-wrapper">
